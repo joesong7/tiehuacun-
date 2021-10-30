@@ -1,0 +1,201 @@
+<template>
+<div>
+  <br>
+<v-img
+  max-height="100%"
+  max-width="100%"
+  src="../assets/home.png"
+  >   
+</v-img>
+<br>
+
+<div :class="$style.text">
+   <v-text >
+     為了相遇和思念，我們學著去涉水澆灌，奮力把歌聲灑上半空，水珠漂向陽光中的樹梢和草地，落入月夜和交錯杯影間，它滋潤了來往的人們、旅人、歸人...
+   </v-text>
+</div>  
+<br>
+<div :class="$style.new">
+ <v-btn
+      depressed
+      color="#43A0AF"
+     
+    >
+     <v-text  :class="$style.newText">最新消息</v-text>
+      
+</v-btn>
+<br>
+
+  
+
+</div>
+
+
+<br>
+<v-divider></v-divider>
+<br>
+ <div >
+ 
+    <v-row v-if="nine">
+    <v-col
+      v-for="n in 9"
+      :key="n"
+      class="d-flex child-flex"
+      cols="4"
+      
+    >
+      <v-img
+        :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+        :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </v-col>
+  </v-row>
+    <v-row v-if="twenty">
+    <v-col
+      v-for="n in 20"
+      :key="n"
+      class="d-flex child-flex"
+      cols="4"
+      
+    >
+      <v-img
+        :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+        :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </v-col>
+  </v-row>
+ </div>
+ <div class="text-center">
+     <v-btn
+      class="ma-2"
+      outlined
+      color="#8F8F8F"
+      v-on:click="frTure"
+      v-if="nine"
+    >
+      查看更多
+    </v-btn>
+    <v-btn
+      class="ma-2"
+      outlined
+      color="#8F8F8F"
+      v-on:click="niTure"
+      v-if="twenty"
+    >
+      返回
+    </v-btn>
+    <div :class="$style.footer">
+      <v-text>鐵花村|音樂聚落・慢市集|    台東市新生路 135巷26號 </v-text>
+    </div>  
+ </div>
+   
+
+</div>  
+</template>
+
+<script>
+
+
+
+import { getAPi } from '../plugins/axios'
+  export default {
+    
+    
+    name: 'Home',
+    data(){
+      return{
+         nine:true,
+         twenty:false,
+         icon:[{web:"https://cdn-icons.flaticon.com/png/512/2504/premium/2504922.png?token=exp=1635606954~hmac=23fc3b1fa8dec9866faabe7cfd36fd70"},{web:"https://cdn-icons-png.flaticon.com/128/1384/1384053.png"}],
+         swiperOption: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        }
+      }
+    },
+    mounted(){
+        getAPi('/api').then((response) => {
+        
+         console.log(response.data.results);
+      
+      
+      })
+    },
+    methods: {
+    frTure() {
+      this.twenty = true;
+
+      if (this.twenty) {
+        
+        this.nine = false;
+      }
+      
+    },
+     niTure() {
+      this.nine = true;
+
+      if (this.nine) {
+        
+        this.twenty = false;
+      }
+      
+    },
+   
+  },
+   
+  }
+</script>
+
+<style module>
+.text{
+  letter-spacing: 0.05em;
+  width: 80%;
+  
+  font-size: 12px;
+  margin-left: 10%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+.newText{
+  color: white;
+}
+.footer{
+  color:#817C7C;
+  font-size: 7px;
+}
+
+</style>
