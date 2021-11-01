@@ -6,7 +6,7 @@
       color="white"
       elevate-on-scroll
       scroll-target="#scrolling-techniques-7"
-      height="80px"
+      height="60%"
       border-color="#43A0AF"
     >
       <v-img
@@ -36,13 +36,13 @@
     >
       <v-list nav dense>
         <v-list-item-group active-class="deep-purple--text text--accent-4">
-          <v-list-item :class="$style.list">
+          <v-list-item :class="$style.list"  to="/">
             <v-list-item-title :class="$style.listText"
               >回首頁</v-list-item-title
             >
           </v-list-item>
 
-          <v-list-item :class="$style.list">
+          <v-list-item :class="$style.list"  to="/about">
             <v-list-item-title :class="$style.listText"
               >關於我們</v-list-item-title
             >
@@ -54,7 +54,7 @@
             >
           </v-list-item>
 
-          <v-list-item :class="$style.list">
+          <v-list-item :class="$style.list" to="/bazaar">
             <v-list-item-title :class="$style.listText"
               >合作市集</v-list-item-title
             >
