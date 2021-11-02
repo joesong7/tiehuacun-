@@ -8,41 +8,43 @@
       </v-btn>
     </div>
     <br />
-
-    <div :class="$style.img">
+    <div :class="$style.song">
+    <div :class="$style.songImg">
       <v-img
         src="https://tour.taitung.gov.tw/image/827/1024x768"
         width="287px"
       ></v-img>
     </div>
-    <div :class="$style.song">
+
       <v-title :class="$style.songTitle">歌 </v-title>
-      <br />
+      
       <v-text :class="$style.songText">
         向地下泉水緩緩流著， 靜靜地滋養著土壤， 長出花草樹木；
         當涓流的歌聲聚成溪流， 匯入川河後， 差就不回頭地奔向海洋。</v-text
       >
-    </div>
-    <br >
- 
 
-    <!-- <div :class="$style.music">
-      <v-title>音樂 </v-title>
-      <br />
-      <v-text>
-        就是我們的海洋， 他連接了不同的島嶼和國度 讓人們在此相遇， 相知、別離、
-        因而思念....
-      </v-text>
-      <div :class="$style.musicImg">
+    </div>
+    <br > 
+
+
+    <div :class="$style.music">
+        <div :class="$style.musicImg">
         <v-img
           src="https://tour.taitung.gov.tw/image/875/1024x768"
           width="260px"
         ></v-img>
       </div>
-    </div> -->
-    <br >
+     
+     
+      <v-text  :class="$style.musicText">
+        就是我們的海洋， 他連接了不同的島嶼和國度 讓人們在此相遇， 相知、別離、
+        因而思念....
+      </v-text>
+       <v-title :class="$style.musicTitle">音樂 </v-title>
+    </div>
+    
   
-
+   <br>
     <div :class="$style.conText">
       <p>
         為了相遇和思念，我們學著去涉水澆灌，
@@ -56,6 +58,7 @@
         width="323px"
       ></v-img>
     </div>
+     <br>
     <div :class="$style.conText2">
       <v-text>
         多年前，我們是旅人也是歸人，聚在這裡升起了篝火，
@@ -71,6 +74,7 @@
         width="323px"
       ></v-img>
     </div>
+    <br>
     <div :class="$style.conText3">
       <v-text>
         溪流必湧向狀況的海洋，露水自然會滲回靜謐的地底，
@@ -90,94 +94,120 @@ export default {};
 
 <style module>
 .text {
-  font-size: 20px;
+  font-size: 14px;
   color: white;
 }
-.img {
-  position: absolute;
-  left: -89px;
+.song {
+
+  display: flex;
+  flex-direction: row ;
+}
+.songImg {
+  
+ position: relative;
+  margin-left: -84px;
   filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
 }
-.song {
-  margin-left: 55%;
-  width: 35%;
-}
+
 .songTitle {
+  position: relative;
+  margin-left: 30px;
   font-size: 18px;
   color: #43a0af;
 }
 .songText {
-  font-size: 12px;
+
+  margin-top: 30px;
+  margin-right: 40px;
+  width: 169px;
   line-height: 14px;
-  letter-spacing: 0.05em;
+ letter-spacing: 0.05em;
+
+  font-size: 12px;
+ 
+}
+.music{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .musicImg {
-  position: absolute;
-  right: -87px;
 
+   
+  position: relative;
+  margin-right: -60px;
   filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
+}
+.musicTitle{
+  margin-left: 30px;
+  width: 100px;
+  font-size: 18px;
+  color: #43a0af;
+}
+.musicText{
+    margin-top: 30px;
+    margin-right: 30px;
+    width: 169px;
+  line-height: 14px;
+ letter-spacing: 0.05em;
+
+  font-size: 12px;
 }
 .conText {
   width: 80%;
-  position: absolute;
-  top: 80%;
-  font-weight: 200;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.05em;
-  left: 33px;
-  letter-spacing: 0.05em;
-}
-.conImg {
-  position: absolute;
-  width: 323px;
-  height: 199px;
-  left: 19px;
-  top: 90%;
-  filter: drop-shadow(13px 13px 4px rgba(0, 0, 0, 0.25));
-}
-.conText2 {
-  width: 80%;
-  position: absolute;
 
   font-weight: 200;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.05em;
-  left: 33px;
+  margin-left: 6%;
   letter-spacing: 0.05em;
-  top: 1000px;
+}
+.conImg {
+
+  width: 323px;
+  margin-left: 6%;
+
+
+  filter: drop-shadow(13px 13px 4px rgba(0, 0, 0, 0.25));
+}
+.conText2 {
+ width: 80%;
+
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  margin-left: 6%;
+  letter-spacing: 0.05em;
+
 }
 .conImg2 {
-  position: absolute;
+
   width: 323px;
-  height: 199px;
-  left: 19px;
-  top: 1080px;
+  
+  margin-left: 6%;
+  
   filter: drop-shadow(13px 13px 4px rgba(0, 0, 0, 0.25));
 }
 .conText3{
 
   width: 80%;
-  position: absolute;
-   top: 1320px;
+
+
   font-weight: 200;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.05em;
-  left: 33px;
+    margin-left: 6%;
   letter-spacing: 0.05em;
 
-}
+} 
 .divider{
   
 
-position: absolute;
+
 width: 344px;
-height: 0px;
-left: 16px;
-top: 1700px;
 
 opacity: 0.2;
 }
