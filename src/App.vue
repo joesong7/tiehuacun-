@@ -4,12 +4,14 @@
     <AppBar/>
     
     <router-view/>
-    
+    <br>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 import AppBar from './components/AppBar.vue'
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   
@@ -18,7 +20,9 @@ export default {
   }),
    
    components: {
-      AppBar
+      AppBar,
+      Footer
     },
 };
 </script>
+
