@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Bazaar from '../views/Bazaar.vue'
+import Article from '../views/Article.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +21,14 @@ const routes = [
   {
     path: '/bazaar',
     name: 'Bazaar',
-    component: Bazaar
+    component: Bazaar,
+    props:true
+  },
+  {
+    path:'/article',
+    name:'Article',
+    component:Article,
+    props:true,
   }
 ]
 
