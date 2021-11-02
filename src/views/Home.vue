@@ -79,9 +79,7 @@
       >
         返回
       </v-btn>
-      <div :class="$style.footer">
-        <v-text>鐵花村|音樂聚落・慢市集| 台東市新生路 135巷26號 </v-text>
-      </div>
+     
     </div>
   </div>
 </template>
@@ -146,8 +144,5 @@ export default {
 .newText {
   color: white;
 }
-.footer {
-  color: #817c7c;
-  font-size: 7px;
-}
+
 </style>
