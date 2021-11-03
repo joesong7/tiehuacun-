@@ -16,7 +16,7 @@
     </div>
     <br />
     <div :class="$style.bazaar">
-      <v-img :src="aData.articleImg"></v-img>
+      <v-img :src="aData.articleImg"  width="100%" height="10%"></v-img>
       <br />
       <v-text>{{ aData.text }}</v-text>
     </div>
@@ -84,6 +84,7 @@ export default {
 .bazaar v-img {
   left: 10;
   max-width: 20%;
+
 }
 .bazaar v-text {
   margin-left: 4%;

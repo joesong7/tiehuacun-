@@ -48,7 +48,7 @@
             >
           </v-list-item>
 
-          <v-list-item :class="$style.list">
+          <v-list-item :class="$style.list" to="/program">
             <v-list-item-title :class="$style.listText"
               >表演節目</v-list-item-title
             >

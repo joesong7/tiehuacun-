@@ -97,11 +97,7 @@ export default {};
   font-size: 14px;
   color: white;
 }
-.song {
 
-  display: flex;
-  flex-direction: row ;
-}
 .songImg {
   
  position: relative;
@@ -126,10 +122,7 @@ export default {};
   font-size: 12px;
  
 }
-.music{
-  display: flex;
-  flex-direction: row-reverse;
-}
+
 
 .musicImg {
 
@@ -204,12 +197,32 @@ export default {};
 
 } 
 .divider{
-  
-
-
 width: 344px;
 
 opacity: 0.2;
+}
+@media (min-width: 768px) {
+
+.song {
+
+    margin-left: 20%;
+}
+.music{
+    margin-left: 20%;
+}
+}
+@media (max-width: 768px) {
+
+.song {
+
+  display: flex;
+  flex-direction: row ;
+}
+.music{
+  display: flex;
+  flex-direction: row-reverse;
+}
+  
 }
 
 </style>
