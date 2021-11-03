@@ -171,14 +171,14 @@ export default {
 
 .programList v-text {
   color: white;
-  font-size: 4px;
+  font-size: 12px;
   text-align: center;
 }
 .programList p {
   margin-top:10px ;
   color: #43a0af;
   text-align: center;
-  font-size: 4px;
+  font-size: 9px;
 }
 @media (min-width: 768px) {
   .programListRow {
