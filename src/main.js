@@ -10,8 +10,8 @@ import '../node_modules/swiper'
 
 
 new Vue({
-  router,
   vuetify,
+  router,
   axios,
   VueAxios,
   VueAwesomeSwiper,

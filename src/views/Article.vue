@@ -2,19 +2,25 @@
   <div>
     <br />
     <br />
-    <div>
-      <v-btn depressed color="#B9846D" width="50%">
-        <v-text>{{ aData.title }}</v-text>
-      </v-btn>
+    <div :class="$style.row">
+      <div :class="$style.col">
+        <v-btn depressed color="#B9846D" width="200px" >
+          <v-text :class="$style.text">{{ aData.title }}</v-text>
+        </v-btn>
+      </div>
+      <div :class="$style.col">
+        <v-btn depressed color="#C4C4C4" to="/bazaar" width="30px">
+          <v-text :class="$style.text">返回</v-text>
+        </v-btn>
+      </div>
     </div>
     <br />
     <div :class="$style.bazaar">
       <v-img :src="aData.articleImg"></v-img>
-         <br />
+      <br />
       <v-text>{{ aData.text }}</v-text>
     </div>
- 
-  
+
     <br />
     <v-divider></v-divider>
     <br />
@@ -32,7 +38,7 @@
       <br />
       <v-text>價格：</v-text>
       <br />
-       {{ aData.cashTitle }}
+      {{ aData.cashTitle }}
       <div v-for="item in aData.cash" :key="item">
         {{ item.money }}
       </div>
@@ -60,29 +66,44 @@ export default {
 </script>
 
 <style module>
-.bazaar v-img{
-  left: 10;
-   max-width: 20%;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
-.bazaar v-text{
-  margin-left:4% ;
+.col{
+  flex-grow: 3;
+  
+  
+}
+.text {
+  color: white;
+}
+.button v-text {
+  color: white;
+}
+.bazaar v-img {
+  left: 10;
+  max-width: 20%;
+}
+.bazaar v-text {
+  margin-left: 4%;
   width: 311px;
   height: 108px;
   font-size: 14px;
   line-height: 19px;
-letter-spacing: 0.05em;
-font-family: Roboto;
+  letter-spacing: 0.05em;
+  font-family: Roboto;
 }
 .article {
-  margin-left: 2%;
+  margin-left: 4%;
 }
 .article v-title {
   color: #43a0af;
   font-size: 18px;
-  font-weight:bold;
+  font-weight: bold;
 }
-.article v-text{
-    color: #C72323;
-    font-weight:bold;
+.article v-text {
+  color: #c72323;
+  font-weight: bold;
 }
 </style>

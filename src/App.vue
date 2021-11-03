@@ -1,17 +1,17 @@
 <template>
   <v-app>
   
-    <AppBar/>
+    <appBar/>
     
     <router-view/>
     <br>
-    <Footer/>
+    <footerText/>
   </v-app>
 </template>
 
 <script>
-import AppBar from './components/AppBar.vue'
-import Footer from './components/Footer.vue'
+import appBar from './components/AppBar.vue'
+import footerText from './components/FooterText.vue'
 export default {
   name: 'App',
   
@@ -20,8 +20,8 @@ export default {
   }),
    
    components: {
-      AppBar,
-      Footer
+      appBar,
+      footerText
     },
 };
 </script>
