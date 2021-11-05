@@ -53,6 +53,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     data: Array,
