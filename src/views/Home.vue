@@ -111,6 +111,7 @@ export default {
   mounted() {
     getAPi("/api").then((response) => {
       console.log(response.data.results);
+      //預留放api的地方
     });
   },
   methods: {
