@@ -88,9 +88,7 @@ export default {
     color: #43A0AF;
 }
 
-.navigation {
-  margin-bottom: 80%;
-}
+
 .list {
   text-align: center;
   background: #b5b3b3;
