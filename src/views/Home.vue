@@ -1,6 +1,7 @@
 <template>
   <div>
-   
+
+    
     <v-img max-height="100%" max-width="100%" src="../assets/home.png"> </v-img>
     <br />
 
@@ -85,11 +86,17 @@
 </template>
 
 <script>
-import { getAPi } from "../plugins/axios";
+import axios from 'axios'
+import Qs from 'qs'
+import jwtDecode from 'jwt-decode'
+
 export default {
   name: "Home",
   data() {
     return {
+      query: {},
+      tokenResult: {},
+      idTokenDecode: {},
       nine: true,
       twenty: false,
       icon: [
@@ -98,21 +105,30 @@ export default {
         },
         { web: "https://cdn-icons-png.flaticon.com/128/1384/1384053.png" },
       ],
-      swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      },
+       
     };
   },
   mounted() {
-    getAPi("/api").then((response) => {
-      console.log(response.data.results);
-      //預留放api的地方
-    });
+      this.query = this.$route.query // 接網址的參數
+
+    let options = Qs.stringify({ // POST的參數  用Qs是要轉成form-urlencoded 因為LINE不吃JSON格式
+      grant_type: 'authorization_code',
+      code: this.query.code,
+      redirect_uri: process.env.VUE_APP_LINE_REDIRECT_URL,
+      client_id: process.env.VUE_APP_LINE_CHANELL_ID,
+      client_secret: process.env.VUE_APP_LINE_CHANELL_SECRET
+    })
+
+  axios.post('https://api.line.me/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
+      this.tokenResult = res.data // 回傳的結果
+      
+      this.idTokenDecode = jwtDecode(res.data.id_token) // 把結果的id_token做解析
+
+      localStorage.setItem("name", this.idTokenDecode.name)
+      localStorage.setItem("img", this.idTokenDecode.picture)
+ 
+    })
+  
   },
   methods: {
     frTure() {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axios_ = axios.create({
-  baseURL: "https://randomuser.me"
+  baseURL: "https://api.line.me/oauth2/v2.1"
 })
 
 function getAPi (url, data) {
