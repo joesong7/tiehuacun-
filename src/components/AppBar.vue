@@ -29,7 +29,7 @@
     <v-navigation-drawer
       v-model="drawer"
       absolute
-      bottom
+      
       temporary
       color="#1D9BAF"
       :class="$style.navigation"
@@ -96,5 +96,9 @@ export default {
 .listText {
   font-size: 30px;
   color: white;
+}
+.navigation{
+  
+  width: 400px;
 }
 </style>
