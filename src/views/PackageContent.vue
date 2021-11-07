@@ -78,7 +78,7 @@
         <v-text :class="$style.couponText2">-折扣{{ carData.coupon }}</v-text>
         <br />
         <v-divider class="mx-6"></v-divider>
-        <v-text>總付款金額</v-text>
+        <v-text>總付款金額 </v-text>
         <v-text>$ {{ total }}</v-text>
       </div>
       <div>
@@ -149,7 +149,7 @@ export default {
   font-weight: bold;
 }
 .couponText2 {
-  margin-left: 60%;
+  margin-left:55%;
   font-size: 18px;
   font-weight: bold;
   color: #d03232;
