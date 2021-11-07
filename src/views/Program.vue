@@ -1,7 +1,6 @@
 <template>
   <div>
-    <br />
-    <br />
+    
     <div>
       <v-btn depressed color="#B9846D">
         <v-text :class="$style.text">表演節目</v-text>

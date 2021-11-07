@@ -59,7 +59,7 @@
               >合作市集</v-list-item-title
             >
           </v-list-item>
-          <v-list-item :class="$style.list">
+          <v-list-item :class="$style.list" to="/package">
             <v-list-item-title :class="$style.listText"
               >購買套票</v-list-item-title
             >

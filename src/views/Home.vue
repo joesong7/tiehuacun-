@@ -1,6 +1,6 @@
 <template>
   <div>
-    <br />
+   
     <v-img max-height="100%" max-width="100%" src="../assets/home.png"> </v-img>
     <br />
 

@@ -5,6 +5,8 @@ import About from '../views/About.vue'
 import Program from '../views/Program.vue'
 import Bazaar from '../views/Bazaar.vue'
 import Article from '../views/Article.vue'
+import Package from '../views/Package.vue'
+import PackageContent from '../views/PackageContent.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -35,7 +37,19 @@ const routes = [
     name:'Article',
     component:Article,
     props:true
-  }
+  },
+  {
+    path:'/package',
+    name:'Package',
+    component:Package,
+    props:true
+  },
+  {
+    path:'/packageContent',
+    name:'PackageContent',
+    component:PackageContent,
+    props:true
+  },
 ]
 
 const router = new VueRouter({

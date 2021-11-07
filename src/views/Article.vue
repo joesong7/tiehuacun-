@@ -1,7 +1,6 @@
 <template>
   <div>
-    <br />
-    <br />
+   
     <div :class="$style.row">
       <div :class="$style.col">
         <v-btn depressed color="#B9846D" width="200px" >
