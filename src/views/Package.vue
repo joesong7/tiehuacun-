@@ -24,6 +24,9 @@
             data: {
               id: item.id,
               number: item.number,
+              title1:item.tititle1,
+              title2:item.title2,
+              title3:item.title3,
               pCourse: item.pCourse,
             },
           },
@@ -59,6 +62,7 @@
 
 <script>
 export default {
+ 
   data() {
     return {
       items: [
@@ -103,8 +107,8 @@ export default {
               date: "20:00 -22:00",
               title: "南王姐妹花",
               text: "樂器：吉他",
-              img: "https://lh3.googleusercontent.com/proxy/Y13o8DNPD1G8CkJSzPFkrwX-SnnyLLxjbIZLF0j2807xMAdUrU1G-FwswbI5v9fDIZ_e4fT8aJWInAhLMpFRlk0ALoRe7w0auXWyJddT8u55676uLqHIqVSD",
-              price: "200",
+              img: "http://www.tiehua.com.tw/images/ckeditor/images/20180927140435.jpg",
+              price: "250",
             },
 
             coupon: "100",

@@ -21,6 +21,12 @@ export default {
   components: {
     LineButton
   },
+  mounted(){
+    if(localStorage.getItem("name") !=null){
+       this.$router.push("/receive");
+    }
+
+  },
   methods: {
     loginEvent() { // 當你按下按鈕發生的事件
         let URL = 'https://access.line.me/oauth2/v2.1/authorize?'

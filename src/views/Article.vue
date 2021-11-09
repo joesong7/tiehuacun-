@@ -62,6 +62,11 @@ export default {
       aData: this.data,
     };
   },
+  mounted(){
+    if(this.aData ==null){
+       this.$router.push("/bazaar");
+    }
+  }
 };
 </script>
 

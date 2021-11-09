@@ -159,13 +159,10 @@ export default {};
 
   width: 323px;
   margin-left: 6%;
-
-
   filter: drop-shadow(13px 13px 4px rgba(0, 0, 0, 0.25));
 }
 .conText2 {
  width: 80%;
-
   font-weight: 200;
   font-size: 12px;
   line-height: 14px;
@@ -177,9 +174,7 @@ export default {};
 .conImg2 {
 
   width: 323px;
-  
   margin-left: 6%;
-  
   filter: drop-shadow(13px 13px 4px rgba(0, 0, 0, 0.25));
 }
 .conText3{

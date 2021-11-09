@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.config.productionTip = false
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueCookies from 'vue-cookies'
 import '../node_modules/swiper'
 
 
@@ -15,5 +16,6 @@ new Vue({
   axios,
   VueAxios,
   VueAwesomeSwiper,
+  VueCookies,
   render: h => h(App)
 }).$mount('#app')

@@ -25,6 +25,8 @@
 
         <v-app-bar-nav-icon
           @click.stop="drawer = !drawer"
+          
+          v-on:click="userTrue"
           color="#43A0AF"
         ></v-app-bar-nav-icon>
       </v-app-bar>
@@ -37,17 +39,18 @@
       color="#1D9BAF"
       :class="$style.navigation"
     >
-      <div :class="$style.user">
-        <v-avatar>
-          <img :src="img" />
+      <div :class="$style.user"  v-if="userData !=null">
+        
+        <v-avatar size="60">
+          <img :src="userData[0].img" />
         </v-avatar>
         <br />
-        {{ username }}
-      </div>
+        {{userData[0].username}}
+     </div>
 
       <v-list nav dense>
         <v-list-item-group active-class="deep-purple--text text--accent-4">
-          <v-list-item :class="$style.list" to="/">
+          <v-list-item :class="$style.list" to="/receive">
             <v-list-item-title :class="$style.listText">
               回首頁</v-list-item-title
             >
@@ -77,6 +80,9 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+      <div :class="$style.user">
+        <v-btn depressed color="secondary" v-on:click="logOut"> 登出 </v-btn>
+      </div>
     </v-navigation-drawer>
     <br />
   </div>
@@ -84,16 +90,25 @@
 
 <script>
 export default {
+
+
   data() {
     return {
       drawer: false,
-      name: "",
-      img: "",
+      userData:null,
     };
   },
-  mounted() {
-    (this.username = localStorage.getItem("name")),
-      (this.img = localStorage.getItem("img"));
+
+  methods: {
+    logOut() {
+     localStorage.removeItem("userData");
+
+      this.$router.push("/");
+    },
+    userTrue(){
+      
+      this.userData =JSON.parse(localStorage.getItem("userData"));
+    }
   },
 };
 </script>
@@ -114,7 +129,7 @@ export default {
 .navigation {
   width: 400px;
 }
-.user{
+.user {
   text-align: center;
   color: white;
   font-size: 20px;
