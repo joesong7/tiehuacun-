@@ -48,6 +48,9 @@ export default {
 }
 </script>
 <style module>
+
+@media (max-width: 768px) {
+
 .login{
     text-align: center;
     margin-top: 70%;
@@ -56,4 +59,11 @@ export default {
 .login h1{
     color: #43A0AF;
 }
+}
+
+.login h1{
+    color: #43A0AF;
+}
+
+
 </style>

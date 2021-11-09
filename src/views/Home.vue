@@ -137,11 +137,7 @@ export default {
           
       
       });
-      if(localStorage.getItem("name") ==null){
-           
-         this.$router.push("/receive");
-      }
-
+    
       this.shppingData =JSON.parse(localStorage.getItem("shoppingData") || '[]');
       this.user =JSON.parse(localStorage.getItem("shoppingData") || '[]');
      
