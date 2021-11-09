@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div>
-      <v-btn depressed color="#B9846D">
-        <v-text :class="$style.text">選票套票種類</v-text>
-      </v-btn>
-    </div>
+    <Title name="選擇套票種類"/>
     <br />
     <div :class="$style.select">
       <v-select
@@ -61,7 +57,11 @@
 </template>
 
 <script>
+import Title from "../components/Title.vue";
 export default {
+  components:{
+    Title
+  },
  
   data() {
     return {
@@ -122,9 +122,6 @@ export default {
 </script>
 
 <style module>
-.text {
-  color: #fff;
-}
 .select {
   margin-left: 3%;
 

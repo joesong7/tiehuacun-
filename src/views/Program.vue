@@ -1,11 +1,7 @@
 <template>
   <div>
     
-    <div>
-      <v-btn depressed color="#B9846D">
-        <v-text :class="$style.text">表演節目</v-text>
-      </v-btn>
-    </div>
+    <Title name="表演節目"/>
     <br />
     <div :class="$style.program">
       <v-title>唱作聚家：</v-title>
@@ -31,9 +27,12 @@
 
 <script>
 import ProgramList from "../components/ProgramList.vue";
+import Title from "../components/Title.vue";
 export default {
   components:{
-     ProgramList
+     ProgramList,
+     Title
+     
   },
   data() {
     return {
@@ -58,9 +57,7 @@ export default {
 </script>
 
 <style module>
-.text {
-  color: white;
-}
+
 .program {
   margin-left: 5%;
 }

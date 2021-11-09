@@ -1,11 +1,7 @@
 <template>
   <div>
      
-    <div>
-      <v-btn depressed color="#B9846D">
-        <v-text :class="$style.text">關於我們</v-text>
-      </v-btn>
-    </div>
+    <Title name="關於我們" />
     <br />
     <div :class="$style.song">
     <div :class="$style.songImg">
@@ -88,7 +84,12 @@
 </template>
 
 <script>
-export default {};
+import Title from '../components/Title.vue'
+export default {
+    components:{
+        Title
+    }
+};
 </script>
 
 <style module>

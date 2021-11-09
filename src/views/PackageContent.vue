@@ -1,10 +1,6 @@
 <template>
   <div v-if="carData">
-    <div>
-      <v-btn depressed color="#B9846D">
-        <v-text :class="$style.text">選票套票種類票內容</v-text>
-      </v-btn>
-    </div>
+    <Title name="選擇套票種類內容"/>
     <br />
     <div :class="$style.select">
       <v-select dense solo :label="carData.title"></v-select>
@@ -113,7 +109,12 @@
 
 <script>
 import { v4 as uuidv4 } from 'uuid';
+import Title from "../components/Title.vue";
 export default {
+  components:{
+    Title
+
+  },
   props: {
     data: Array,
   },
@@ -166,9 +167,6 @@ export default {
 </script>
 
 <style module>
-.text {
-  color: #fff;
-}
 .select {
   margin-left: 3%;
 

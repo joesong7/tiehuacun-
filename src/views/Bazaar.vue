@@ -1,12 +1,8 @@
 <template>
   <div>
    
-    <div>
-      <v-btn depressed color="#B9846D">
-        <v-text :class="$style.text">合作市集</v-text>
-      </v-btn>
-    </div>
-
+ 
+    <Title  name="合作市集"/>
     <v-sheet min-width="300">
       <div class="d-flex flex-wrap">
         <v-btn outlined class="ma-2" color="#43A0AF" width="26%" height="30px;">
@@ -26,8 +22,10 @@
 
 <script>
 import Card from "../components/Card.vue";
+import Title from "../components/Title.vue";
 export default {
   components:{
+    Title,
     Card
   },
   data() {
@@ -39,9 +37,5 @@ export default {
 </script>
 
 <style module>
-.text {
-  font-size: 14px;
-  color: white;
-}
 
 </style>

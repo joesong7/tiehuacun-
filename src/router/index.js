@@ -8,6 +8,7 @@ import Bazaar from '../views/Bazaar.vue'
 import Article from '../views/Article.vue'
 import Package from '../views/Package.vue'
 import PackageContent from '../views/PackageContent.vue'
+import ShippingCar from '../views/ShippingCar.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -56,6 +57,12 @@ const routes = [
     component:PackageContent,
     props:true
   },
+  {
+    path:'/shippingCar',
+    name:'ShippingCar',
+    component:ShippingCar,
+    props:true
+  }
 ]
 
 const router = new VueRouter({
