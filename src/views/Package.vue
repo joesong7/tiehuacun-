@@ -108,11 +108,11 @@ export default {
               title: "南王姐妹花",
               text: "樂器：吉他",
               img: "http://www.tiehua.com.tw/images/ckeditor/images/20180927140435.jpg",
-              price: "250",
+              price: "300",
             },
 
             coupon: "100",
-            price:"1050"
+            price:"1100"
           },]
         },
       ],

@@ -10,7 +10,7 @@
             <div :class="$style.snumber" >
               <v-btn x-small color="#43A0AF" width="60" height="30"><v-text>{{ item.number }}套票</v-text></v-btn>
             </div>
-            <br>
+         
 
             <div :class="$style.stitle">
 
@@ -23,9 +23,9 @@
            
           
           </div>
-          <v-card-actions>
-            <div>
-              <v-text> ${{ item.price }}</v-text>
+          <v-card-actions :class="$style.saction">
+            <div :class="$style.sprice">
+              <v-text> {{total}}</v-text>
               <br />
               <div>
                 <v-btn v-on:click="addCount" x-small>
@@ -45,8 +45,7 @@
     </div>
     <br>
     <div :class="$style.shBtn">
-      <v-btn width="200" elevation="3" color="#43a0af" v-on:click="shBtn"
-        ><v-text>結帳</v-text>
+      <v-btn width="300"  height="44px" elevation="3" color="#43a0af" v-on:click="shBtn"><v-text>結帳</v-text>
       </v-btn>
     </div>
   
@@ -55,6 +54,7 @@
 
 <script>
 import Title from "../components/Title.vue";
+
 export default {
   components: {
     Title,
@@ -62,15 +62,18 @@ export default {
   data() {
     return {
       count:0,
+      price:0,
       shppingData: [],
-    
+      billData: [],
     };
   },
  
   
   mounted() {
     this.shppingData = JSON.parse(localStorage.getItem("shoppingData") || "[]");
-    this.count = this.shppingData[0].count
+    this.count = this.shppingData[0].count;
+    this.price = this.shppingData[0].price;
+
   },
   methods: {
     addCount() {
@@ -85,7 +88,28 @@ export default {
         this.count = this.count - 1;
       }
     },
+    shBtn(){
+        this.billData.push({
+        number: this.shppingData[0].number,
+        title1: this.shppingData[0].title1,
+        title2: this.shppingData[0].title2,
+        title3: this.shppingData[0].title3,
+        price: this.total,
+        count: this.count,
+      });
+      localStorage.setItem('billData', JSON.stringify(this.billData));
+        this.$router.push("/check");
+      
+      
+    }
   },
+computed:{
+     
+    total: function () {
+      return 1100*this.count-100;
+    },
+
+}  
 };
 </script>
 
@@ -103,6 +127,15 @@ export default {
   color: #43A0AF;
   font-weight: bold;
 }
+.saction{
+  padding-top: 50px;
+}
+.sprice v-text{
+  color: rgba(208, 50, 50, 0.74);
+  font-weight: bold;
+  padding-left: 25px;
+}
+
 
 .shBtn {
   text-align: center;

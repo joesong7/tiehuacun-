@@ -99,7 +99,7 @@
     </div>
     <br />
     <div :class="$style.shBtn">
-      <v-btn width="200" elevation="3" color="#43a0af" v-on:click="shBtn"
+      <v-btn width="300" height="44px" elevation="3" color="#43a0af" v-on:click="shBtn"
         ><v-text>加入購物車</v-text>
       </v-btn>
     </div>
@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from "uuid";
+
 import Title from "../components/Title.vue";
 export default {
   components: {
@@ -156,7 +156,7 @@ export default {
     },
     shBtn() {
       this.shoppingData.push({
-        id: uuidv4(),
+     
         number: this.data.number,
         title1: this.data.title1,
         title2: this.data.title2,
