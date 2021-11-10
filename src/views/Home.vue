@@ -95,8 +95,8 @@ export default {
       idTokenDecode: {},
       nine: true,
       twenty: false,
-      shppingData:[],
-      userData:[],
+      shppingData: [],
+      userData: [],
       icon: [
         {
           web: "https://cdn-icons.flaticon.com/png/512/2504/premium/2504922.png?token=exp=1635606954~hmac=23fc3b1fa8dec9866faabe7cfd36fd70",
@@ -106,7 +106,6 @@ export default {
     };
   },
 
-  
   mounted() {
     this.query = this.$route.query; // 接網址的參數
 
@@ -127,23 +126,13 @@ export default {
         this.tokenResult = res.data; // 回傳的結果
 
         this.idTokenDecode = jwtDecode(res.data.id_token); // 把結果的id_token做解析
-        
-        this.userData.push({username:this.idTokenDecode.name,img:this.idTokenDecode.picture})
-        localStorage.setItem("userData",JSON.stringify(this.userData));
-            
-           
 
-      
-          
-      
+        this.userData.push({
+          username: this.idTokenDecode.name,
+          img: this.idTokenDecode.picture,
+        });
+        localStorage.setItem("userData", JSON.stringify(this.userData));
       });
-    
-      this.shppingData =JSON.parse(localStorage.getItem("shoppingData") || '[]');
-      this.user =JSON.parse(localStorage.getItem("shoppingData") || '[]');
-     
-
-   
-      
   },
   methods: {
     frTure() {

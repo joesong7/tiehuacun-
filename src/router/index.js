@@ -9,6 +9,7 @@ import Article from '../views/Article.vue'
 import Package from '../views/Package.vue'
 import PackageContent from '../views/PackageContent.vue'
 import ShippingCar from '../views/ShippingCar.vue'
+import Check from '../views/Check.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -62,7 +63,13 @@ const routes = [
     name:'ShippingCar',
     component:ShippingCar,
     props:true
-  }
+  },
+  {
+    path:'/check',
+    name:'Check',
+    component:Check,
+    props:true
+  },
 ]
 
 const router = new VueRouter({

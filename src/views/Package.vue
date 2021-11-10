@@ -20,7 +20,7 @@
             data: {
               id: item.id,
               number: item.number,
-              title1:item.tititle1,
+              title1:item.title1,
               title2:item.title2,
               title3:item.title3,
               pCourse: item.pCourse,

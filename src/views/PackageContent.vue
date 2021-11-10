@@ -1,6 +1,6 @@
 <template>
   <div v-if="carData">
-    <Title name="選擇套票種類內容"/>
+    <Title name="選擇套票種類內容" />
     <br />
     <div :class="$style.select">
       <v-select dense solo :label="carData.title"></v-select>
@@ -16,7 +16,6 @@
 
       <v-img height="250" :src="data.pCourse[0].detailed.img"></v-img>
 
-   
       <div
         class="d-flex flex-no-wrap justify-space-between"
         :class="$style.productNews"
@@ -98,22 +97,21 @@
         <v-icon dark> mdi-minus </v-icon>
       </v-btn>
     </div>
-    <br>
+    <br />
     <div :class="$style.shBtn">
-      <v-btn width="200" elevation="3" color="#43a0af" v-on:click="shBtn" > <v-text>加入購物車</v-text>
-        </v-btn>
+      <v-btn width="200" elevation="3" color="#43a0af" v-on:click="shBtn"
+        ><v-text>加入購物車</v-text>
+      </v-btn>
     </div>
-    
   </div>
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import Title from "../components/Title.vue";
 export default {
-  components:{
-    Title
-
+  components: {
+    Title,
   },
   props: {
     data: Array,
@@ -156,12 +154,19 @@ export default {
         this.count = this.count - 1;
       }
     },
-    shBtn(){
-      this.shoppingData.push({id:uuidv4(),number:this.data.number,title1:this.data.title1,title2:this.data.title2,title3:this.data.title3,price:this.newPrice,count:this.count})
-    
-      localStorage.setItem(`shoppingData`,JSON.stringify(this.shoppingData));
-      this.$router.push("/receive");
-    }
+    shBtn() {
+      this.shoppingData.push({
+        id: uuidv4(),
+        number: this.data.number,
+        title1: this.data.title1,
+        title2: this.data.title2,
+        title3: this.data.title3,
+        price: this.total,
+        count: this.count,
+      });
+      localStorage.setItem(`shoppingData`, JSON.stringify(this.shoppingData));
+      this.$router.push("/shippingcar");
+    },
   },
 };
 </script>
@@ -226,11 +231,10 @@ export default {
 .add {
   margin-left: 30%;
 }
-.shBtn{
+.shBtn {
   text-align: center;
-  
 }
-.shBtn v-text{
+.shBtn v-text {
   color: white;
 }
 </style>
