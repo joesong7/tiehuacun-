@@ -22,10 +22,10 @@
         >
 
         <v-spacer></v-spacer>
-
+   
+      
         <v-app-bar-nav-icon
           @click.stop="drawer = !drawer"
-          
           v-on:click="userTrue"
           color="#43A0AF"
         ></v-app-bar-nav-icon>
@@ -39,14 +39,27 @@
       color="#1D9BAF"
       :class="$style.navigation"
     >
-      <div :class="$style.user"  v-if="userData !=null">
-        
+      <div :class="$style.user" v-if="userData != null">
         <v-avatar size="60">
           <img :src="userData[0].img" />
         </v-avatar>
         <br />
-        {{userData[0].username}}
-     </div>
+        {{ userData[0].username }}
+       
+       <br>
+          <v-btn
+        class="ma-2"
+        color="orange darken-2"
+        dark
+        to="/check"
+      >
+     
+       <v-icon color="while darken-2"  >  mdi-cart </v-icon>
+      </v-btn>
+            
+      </div>
+       
+        
 
       <v-list nav dense>
         <v-list-item-group active-class="deep-purple--text text--accent-4">
@@ -90,25 +103,22 @@
 
 <script>
 export default {
-
-
   data() {
     return {
       drawer: false,
-      userData:null,
+      userData: null,
     };
   },
 
   methods: {
     logOut() {
-     localStorage.removeItem("userData");
+      localStorage.removeItem("userData");
 
       this.$router.push("/");
     },
-    userTrue(){
-      
-      this.userData =JSON.parse(localStorage.getItem("userData"));
-    }
+    userTrue() {
+      this.userData = JSON.parse(localStorage.getItem("userData"));
+    },
   },
 };
 </script>

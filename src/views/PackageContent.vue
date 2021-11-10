@@ -193,12 +193,12 @@ export default {
   font-size: 15px;
   font-weight: bold;
 }
-.showPrice v-text {
+.showPrice {
   color: #d03232;
   padding-right: 1px;
+  padding-top:20px;
   position: relative;
-
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 .couponCard {
