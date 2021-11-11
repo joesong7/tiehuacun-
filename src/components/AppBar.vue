@@ -51,7 +51,7 @@
         class="ma-2"
         color="orange darken-2"
         dark
-        to="/check"
+        to="/ShippingCar"
       >
      
        <v-icon color="while darken-2"  >  mdi-cart </v-icon>
