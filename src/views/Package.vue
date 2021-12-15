@@ -53,6 +53,11 @@
       </v-card>
       <br />
     </div>
+
+      <div >
+     
+      <br />
+    </div>
   </div>
 </template>
 
@@ -65,6 +70,7 @@ export default {
  
   data() {
     return {
+      url: 'http://www.google.com',
       items: [
         "2021年9月17日",
         "2021年9月18日",
@@ -118,6 +124,7 @@ export default {
       ],
     };
   },
+  
 };
 </script>
 

@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: "LineButton",
   data () {
     return {
       buttonStatus: require('../assets/images/btn_login_base.png')

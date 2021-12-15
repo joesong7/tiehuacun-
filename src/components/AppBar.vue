@@ -63,7 +63,7 @@
 
       <v-list nav dense>
         <v-list-item-group active-class="deep-purple--text text--accent-4">
-          <v-list-item :class="$style.list" to="/receive">
+          <v-list-item :class="$style.list" to="/">
             <v-list-item-title :class="$style.listText">
               回首頁</v-list-item-title
             >
@@ -103,6 +103,7 @@
 
 <script>
 export default {
+  name: "AppBar",
   data() {
     return {
       drawer: false,

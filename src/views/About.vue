@@ -86,6 +86,7 @@
 <script>
 import Title from '../components/Title.vue'
 export default {
+    name:"About",
     components:{
         Title
     }

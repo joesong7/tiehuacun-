@@ -1,13 +1,13 @@
 <template>
   <v-app>
      
-    <appBar v-if="$route.path != '/'"/>
+    <appBar />
     <br>
     <br>
     
     <router-view/>
     <br>
-    <footerText v-if="$route.path != '/'"/>
+    <footerText/>
   </v-app>
 </template>
 
